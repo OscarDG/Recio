@@ -1,0 +1,15 @@
+---
+import CtaBtn from "./CtaBtn.astro"
+
+const LinkText = encodeURI('Hola, quisiera conocer más de sus servicios')
+const WhatsAppNumber = `https://wa.me/573174048898?text=${LinkText}`
+---
+<main class="flex flex-col w-full h-dvh">
+    <div class="flex flex-col bg-[url(/images/hero_image.jpg)] bg-cover bg-center w-full h-dvh">
+        <div class="flex flex-col justify-center items-center bg-black/30 w-full h-full text-center p-5">
+            <div class="flex flex-col w-[90%] h-full justify-around items-center mt-20">
+                <h1 class="flex flex-col justify-center items-center w-full md:w-[80%] h-[50%] text-main-white text-4xl md:leading-20 md:text-6xl md:font-bold font-[CssSign] animate-fade-in-down">Creemos que marcas que se sienten, se recuerdan y dejan huella</h1>
+                <CtaBtn text="Contactar" link={WhatsAppNumber} variant="primary" responsive="flex md:hidden"/>
+            </div>
+        </div>
+</main>

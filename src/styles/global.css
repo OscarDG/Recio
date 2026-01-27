@@ -1,0 +1,24 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "tailwind-animations";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+    --color-main-orange: #f39200;
+    --color-light-orange: #FFBF5F;
+    --color-dark-orange: #C07300;
+    --color-main-green: #0a4433;
+    --color-light-green: #327561;
+    --color-dark_green: #002C1F;
+    --color-light_blue: #2f7683;
+    --color-main-borgoña: #651d0e;
+    --color-main-black: #121212;
+    --color-main-white: #F8F6F2
+}
+
+@font-face {
+    font-family: "CssSign";
+    src: url("/src/assets/fonts/CCSignLanguage-Bold.ttf") format("truetype");
+    font-weight: 300;
+}
