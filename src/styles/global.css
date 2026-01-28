@@ -2,7 +2,7 @@
 @import "tw-animate-css";
 @import "tailwind-animations";
 
-@custom-variant dark (&:is(.dark *));
+@import '@fontsource-variable/montserrat';
 
 @theme {
     --color-main-orange: #f39200;

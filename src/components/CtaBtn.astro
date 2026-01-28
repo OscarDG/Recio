@@ -10,4 +10,4 @@ interface Props {
 const { text, link, variant, responsive, size } = Astro.props;
 ---
 
-<a href={link} target="_blank" class={`${responsive} flex justify-center items-center mx-4 rounded-xl shadow-md ${variant === 'primary' ? 'bg-main-green text-white hover:text-light-green' : 'text-main-green hover:text-light-green bg-none border-2 border-solid border-main-green'} ${size === 'small' ? 'w-20 h-5 font-medium text-sm' : size === 'medium' ? 'w-30 h-10 font-medium text-md' : 'w-50 h-15 font-medium text-lg'}`}>{text}</a>
+<a href={link} target="_blank" class={`${responsive} flex justify-center items-center mx-4 rounded-full shadow-md font-[montserrat] ${variant === 'primary' ? 'bg-gradient-to-br from-main-green to-light-green text-white hover:shadow-xl transform transition-all duration-300' : 'text-main-green hover:text-light-green bg-none border-2 border-solid border-main-green'} ${size === 'small' ? 'w-20 h-5 font-medium text-sm' : size === 'medium' ? 'w-30 h-10 font-medium text-md' : 'w-50 h-15 font-medium text-lg'}`}>{text}</a>
