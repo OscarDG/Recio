@@ -5,11 +5,33 @@ const LinkText = encodeURI('Hola, quisiera conocer más de sus servicios')
 const WhatsAppNumber = `https://wa.me/573174048898?text=${LinkText}`
 ---
 <main class="flex flex-col w-full h-dvh">
-    <div class="flex flex-col bg-[url(/images/hero_image.jpg)] bg-cover bg-center w-full h-dvh">
-        <div class="flex flex-col justify-center items-center bg-black/30 w-full h-full text-center p-5">
-            <div class="flex flex-col w-[90%] h-full justify-around items-center mt-20">
-                <h1 class="flex flex-col justify-center items-center w-full md:w-[80%] h-[50%] text-main-white text-4xl md:leading-20 md:text-6xl md:font-light font-[CssSign] animate-fade-in-down">Creemos en marcas que se sienten, se recuerdan y dejan huella</h1>
-                <CtaBtn text="Contactar" link={WhatsAppNumber} variant="primary" responsive="flex md:hidden"/>
+    <div class="relative flex md:flex-row flex-col bg-white w-full h-dvh">
+        <div class="flex flex-col justify-center items-center w-full md:w-[50%] md:h-dvh h-[50%] text-center p-5 mt-30 md:mt-20">
+            <div class="flex flex-col w-[90%] h-full justify-center items-baseline gap-y-4 md:gap-y-0">
+                <h1 class="main-text flex text-left md:w-[80%] w-[80%] h-[60%] text-main-orange md:leading-20 text-4xl md:text-6xl font-[montserrat] font-bold animate-fade-in-down">Creemos en marcas que se recuerdan y dejan huella</h1>
+                <div class="second-text md:w-[80%] w-[90%] h-[40%] text-left text-lg text-main-black font-[montserrat] animate-fade-in-down">
+                    <p>Creamos marcas memorables y experiencias digitales que conectan con tu audiencia y hacen crecer tu negocio.</p>
+                </div>
             </div>
         </div>
+        <div class="info-side flex flex-col justify-around items-center md:w-[50%] w-full md:h-dvh h-[50%]">
+            <div class="hero-cta flex flex-row justify-center items-center w-[90%] h-12 mt-10">
+                <CtaBtn text="Ponte en contacto" link={WhatsAppNumber} variant="primary" responsive="flex md:hidden"/>
+            </div>
+            <div class="hero-char flex flex-row justify-around items-baseline w-full h-30 font-[montserrat] mb-5">
+                <div class="flex flex-col justify-center items-center w-[30%] h-[90%] p-4">
+                    <span class="text-light-blue font-bold text-2xl mb-2">100%</span>
+                    <p class="text-center text-main-black">Clientes satisfechos</p>
+                </div>
+                <div class="flex flex-col justify-center items-center w-[30%] h-[90%] ">
+                    <span class="text-light-blue font-bold text-2xl mb-2">Alineados</span>
+                    <p class="text-center text-main-black">con tus intereses y objetivos</p>
+                </div>
+                <div class="flex flex-col justify-center items-center w-[30%] h-[90%]">
+                    <span class="text-light-blue font-bold text-2xl mb-2">Proceso</span>
+                    <p class="text-center text-main-black">altamente colaborativo</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </main>
