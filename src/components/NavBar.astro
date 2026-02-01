@@ -5,6 +5,8 @@ const LinkText = encodeURI('Hola, quisiera conocer más de sus servicios')
 const WhatsAppNumber = `https://wa.me/573174048898?text=${LinkText}`
 ---
 <nav class="relative flex flex-row justify-center md:justify-between items-center w-full h-full p-10">
-    <img src="/isologo_recio.png" alt="Logo Recio" class="w-12 h-16"/>
-    <CtaBtn responsive="hidden md:flex" text='Contactar' link={WhatsAppNumber} variant="primary" size="medium"/>
+    <img src="/isologo_recio.png" alt="Logo Recio" class="2xl:w-10 md:w-8 w-8 2xl:h-12 md:h-10 h-10"/>
+    <div class="hidden md:flex flex-row w-40 h-10">
+        <CtaBtn responsive="hidden md:flex" text='Contactar' link={WhatsAppNumber} variant="primary"/>
+    </div>
 </nav>

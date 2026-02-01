@@ -4,15 +4,16 @@ import type { Service } from "../types/services"
 
 import '../styles/global.css'
 import Banner from './Banner.astro'
+import CtaBtn from './CtaBtn.astro'
 
 const LinkText = encodeURI('Hola, quisiera conocer más de sus servicios')
 const WhatsAppNumber = `https://wa.me/573174048898?text=${LinkText}`
 ---
 
-<section class="scroll-reveal-section min-h-screen bg-linear-to-b from-slate-50 to-white py-20 font-[montserrat] ">
-  <div class="container flex flex-col mx-auto px-6">
+<section class="scroll-reveal-section min-h-screen bg-linear-to-b from-slate-50 to-white py-20 font-[montserrat]">
+  <div class="container relative flex flex-col justify-center items-center mx-auto px-6">
  <!-- Header -->
-    <div class="reveal-item opacity-0 translate-y-12 transition-all duration-1000 mb-16">
+    <div class="reveal-item flex flex-col w-full opacity-0 translate-y-12 transition-all duration-1000 mb-16">
       <h2 class="text-5xl md:text-6xl font-bold text-main-black mb-4">
         SERVICIOS
       </h2>
@@ -44,15 +45,16 @@ const WhatsAppNumber = `https://wa.me/573174048898?text=${LinkText}`
           </div>
         ))
       }
+    </div>
     <!-- Call to Action -->
-    <div class="reveal-item opacity-0 translate-y-12 transition-all duration-1000 text-center">
+    <div class="reveal-item flex flex-col justify-center items-center w-full md:w-[50%] opacity-0 translate-y-12 transition-all duration-1000 text-center">
       <h3 class="text-3xl font-bold text-main-black mb-10">¿Listo para iniciar tu proyecto?</h3>
-      <a href={WhatsAppNumber} class="px-8 py-4 bg-linear-to-r from-light-orange to-dark-orange text-white font-[montserrat] font-semibold rounded-full hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
-        Contactanos
-      <a/>
+      <div class="w-50 h-15">
+        <CtaBtn text="Contactarnos" link={WhatsAppNumber} variant="primary"/>
+      </div>
     </div>
   </div>
-  <Banner />
+    <Banner />
 </section>
 <script>
   // Intersection Observer for scroll-triggered animations
