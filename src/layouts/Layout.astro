@@ -6,24 +6,49 @@ interface Props {
 }
 
 const { title } = Astro.props;
+const description = 'Estudio creativo colombiano. Creamos marcas memorables y experiencias digitales que conectan y hacen crecer tu negocio.';
+const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).toString() : undefined;
+const orgSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Recio - Estudio Creativo",
+  url: canonical,
+  logo: "/isologo_recio.png",
+  contactPoint: [
+    {
+      "@type": "ContactPoint",
+      contactType: "customer service",
+      telephone: "+573174048898",
+      areaServed: "CO",
+      availableLanguage: "es"
+    }
+  ]
+};
 ---
 <!doctype html>
-<html lang="en">
+<html lang="es">
     <head>
         <meta charset="utf-8" />
-        <link rel="icon" type="image/svg+xml" href="/isologo_recio.svg" />
-        <link rel="icon" href="/isologo-recio.svg" />
-        <meta name="viewport" content="width=device-width" />
-        <meta name="description" content="" />
-        <meta property="og:title" content="Recio - Estudio Creativo" />
-		<meta property="og:description" content="" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="icon" href="/favicon.ico" />
+        {canonical && (<link rel="canonical" href={canonical} />)}
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content={description} />
+        <meta name="robots" content="index, follow" />
+        <meta name="theme-color" content="#0a4433" />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
 		<meta property="og:site_name" content="Recio - Estudio Creativo" />
 		<meta property="og:type" content="website" />
+        {canonical && (<meta property="og:url" content={canonical} />)}
 		<meta property="og:image" content="/isologo_recio.png" />
-		<meta name="twitter:card" content="summary" />
-		<meta name="twitter:title" content="Recio | Estudio Creativo" />
-		<meta name="twitter:description" content="" />
+		<meta property="og:locale" content="es_CO" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content="/isologo_recio.png" />
         <title>{title}</title>
+        <script type="application/ld+json">{JSON.stringify(orgSchema)}</script>
     </head>
     <body>
         <slot/>

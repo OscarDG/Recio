@@ -3,15 +3,15 @@ import { services } from "../lib/services"
 import type { Service } from "../types/services"
 
 import '../styles/global.css'
-import Banner from './Banner.astro'
 import CtaBtn from './CtaBtn.astro'
+import Carrousel from "./Carrousel.astro"
 
 const LinkText = encodeURI('Hola, quisiera conocer más de sus servicios')
 const WhatsAppNumber = `https://wa.me/573174048898?text=${LinkText}`
 ---
 
 <section class="scroll-reveal-section min-h-screen bg-linear-to-b from-slate-50 to-white py-20 font-[montserrat]">
-  <div class="container relative flex flex-col justify-center items-center mx-auto px-6">
+  <div class="container relative flex flex-col justify-center items-center mx-auto px-6 mb-20">
  <!-- Header -->
     <div class="reveal-item flex flex-col w-full opacity-0 translate-y-12 transition-all duration-1000 mb-16">
       <h2 class="text-5xl md:text-6xl font-bold text-main-black mb-4">
@@ -54,7 +54,22 @@ const WhatsAppNumber = `https://wa.me/573174048898?text=${LinkText}`
       </div>
     </div>
   </div>
-    <Banner />
+  <Carrousel bg_color="bg-gray-400/50" md_high={30} high={30}>
+      <div slot="first">
+        <h1 class="inline-flex text-main-black text-3xl md:text-6xl font-bold mx-8">EL CARACTER</h1>
+        <span class="inline-flex items-center"><img src="./images/recio_redes.png" alt="Recio Logo" class="w-10 h-10"/></span>
+        <h1 class="inline-flex text-main-black text-3xl md:text-6xl font-bold mx-8">NO SE IMPROVISA
+        </h1>
+        <span class="inline-flex items-center"><img src="./images/recio_redes.png" alt="Recio Logo" class="w-10 h-10"/></span>
+      </div>
+      <div slot="second">
+        <h1 class="inline-flex text-main-black text-3xl md:text-6xl font-bold mx-8">EL CARACTER</h1>
+        <span class="inline-flex items-center"><img src="./images/recio_redes.png" alt="Recio Logo" class="w-10 h-10"/></span>
+        <h1 class="inline-flex text-main-black text-3xl md:text-6xl font-bold mx-8">NO SE IMPROVISA
+        </h1>
+        <span class="inline-flex"><img src="./images/recio_redes.png" alt="Recio Logo" class="w-10 h-10"/></span>
+      </div>
+  </>
 </section>
 <script>
   // Intersection Observer for scroll-triggered animations

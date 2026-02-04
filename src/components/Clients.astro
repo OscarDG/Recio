@@ -1,0 +1,38 @@
+---
+import { clients } from "@/lib/clients"
+import Carrousel from "./Carrousel.astro"
+---
+<section class="clients-section flex flex-col items-center justify-center w-full h-auto bg-linear-to-b from-white to-slate-50 font-[montserrat] p-5">
+    <div class="flex flex-col justify-center items-center w-full h-auto mt-10">
+        <h2 class="w-[80%] h-auto font-bold text-2xl text-center mb-5">Confían en nosotros</h2>
+        <Carrousel bg_color="bg-white" md_high={30} high={50}>
+            <div slot="first" class="flex flex-row w-auto h-auto gap-x-20">
+                {
+                    clients.map((client) => (
+                        <div class="flex flex-col justify-center items-center w-20 h-20">
+                            <img src={client.image} alt={client.name} class="w-fit h-fit" />
+                        </div>
+                    ))
+                }
+            </div>
+            <div slot="second" class="flex flex-row w-auto h-auto gap-x-20">
+                {
+                    clients.map((client) => (
+                        <div class="flex flex-col justify-center items-center w-20 h-20">
+                            <img src={client.image} alt={client.name} class="w-fit h-fit" />
+                        </div>
+                    ))
+                }
+            </div>
+            <div slot="third" class="flex flex-row w-auto gap-x-20">
+                {
+                    clients.map((client) => (
+                        <div class="flex flex-col justify-center items-center w-20 h-20">
+                            <img src={client.image} alt={client.name} class="w-fit h-fit" />
+                        </div>
+                    ))
+                }
+            </div>
+        </Banner>
+    </div>
+</section>

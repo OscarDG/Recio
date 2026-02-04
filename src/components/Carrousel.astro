@@ -1,0 +1,82 @@
+---
+// InfiniteTextLoop.astro
+// Infinite horizontal scrolling text loop - Midlife Engineering style
+interface Props {
+  bg_color: string,
+  md_high: number,
+  high: number
+}
+
+const { bg_color, md_high, high } = Astro.props
+---
+
+<div class={`relative overflow-hidden w-full h-full ${bg_color}`}>
+  <div class="mask-fade absolute inset-0 pointer-events-none"></div>
+  <div class=`marquee flex flex-col justify-center items-center h-${high} md:h-${md_high} py-0`>
+    <div class="marquee-track">
+      <div class="marquee-group gap-x-20">
+        <div class="marquee-item">
+          <slot name="first"></slot>
+        </div>
+        <div class="marquee-item">
+          <slot name="second"></slot>
+        </div>
+        <div class="marquee-item">
+          <slot name="third"></slot>
+        </div>
+      </div>
+      <div class="marquee-group gap-x-20" aria-hidden="true">
+        <div class="marquee-item"><slot name="first"></slot></div>
+        <div class="marquee-item"><slot name="second"></slot></div>
+        <div class="marquee-item"><slot name="third"></slot></div>
+      </div>
+    </div>
+  </div>
+</div>
+  <style>
+    .marquee {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .marquee-track {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      gap: 2.5rem; /* ~10 in Tailwind gap-x-10 */
+      will-change: transform;
+      animation: marquee-scroll 50s linear infinite;
+    }
+
+    .marquee-group {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      white-space: nowrap;
+      }
+
+    .marquee-item {
+      display: inline-flex;
+      align-items: center;
+      white-space: nowrap;
+    }
+
+    @keyframes marquee-scroll {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    .marquee-track:hover {
+      animation-play-state: paused;
+    }
+
+    .mask-fade {
+      -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+              mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .marquee-track { animation: none; }
+    }
+  </style>
