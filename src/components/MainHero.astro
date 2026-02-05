@@ -4,22 +4,22 @@ import CtaBtn from "./CtaBtn.astro"
 const LinkText = encodeURI('Hola, quisiera conocer más de sus servicios')
 const WhatsAppNumber = `https://wa.me/573174048898?text=${LinkText}`
 ---
-<main class="flex flex-col w-full h-auto pb-5">
-    <div class="main-container relative flex md:flex-row flex-col bg-white w-full h-dvh mt-25 md:mt-0">
+<main class="flex flex-col w-full h-auto bg-white pb-5">
+    <div class="main-container relative flex md:flex-row flex-col w-full h-auto mt-0 md:mt-0">
         <div class="info-side flex flex-col justify-center items-center w-full md:w-[50%] md:h-full h-[65%] p-5 md:p-10 md:order-0 order-1">
-            <div class="text flex flex-col md:w-[90%] w-full md:h-full h-[80%] justify-between items-baseline md:gap-y-0 mt-0 md:mt-25">
+            <div class="text flex flex-col md:w-[90%] w-full md:h-full h-[80%] justify-between items-baseline md:gap-y-0 mt-10 md:mt-10">
                 <h1 class="main-text flex justify-center md:items-end text-left text-main-orange md:leading-12 2xl:leading-18 text-4xl md:text-5xl 2xl:text-7xl font-[montserrat] font-bold animate-fade-in-down mb-6 md:mb-12">Creemos en marcas que se recuerdan y dejan huella</h1>
                 <div class="second-text md:w-[90%] text-left md:text-xl 2xl:text-4xl text-lg text-main-black font-[montserrat] animate-fade-in-down mb-15">
                     <p>Creamos marcas memorables y experiencias digitales que conectan con tu audiencia y hacen crecer tu negocio.</p>
                 </div>
-                <div class="hero-char flex flex-row justify-around items-baseline w-full h-30 font-[montserrat] 2xl:mb-10 md:mb-5 mb-20">
+                <div class="hero-char flex flex-row justify-around items-baseline w-full h-30 font-[montserrat] md:mb-0 mb-5 gap-x-5 md:gap-x-10">
                     <div class="flex flex-col justify-center items-center w-[30%] h-[90%] p-2 md:p-4 text-lg md:text-md 2xl:text-2xl">
                         <span class="text-light-blue font-bold mb-2">100%</span>
                         <p class="text-center text-main-black">Clientes satisfechos</p>
                     </div>
                     <div class="flex flex-col justify-center items-center w-[30%] h-[90%] p-2 md:p-4 text-lg md:text-md 2xl:text-2xl">
                         <span class="text-light-blue font-bold mb-2">Alineados</span>
-                        <p class="text-center text-main-black">con tus intereses y objetivos</p>
+                        <p class="text-center text-main-black">con tus objetivos</p>
                     </div>
                     <div class="flex flex-col justify-center items-center w-[30%] h-[90%] p-2 md:p-4 text-lg md:text-md 2xl:text-2xl">
                         <span class="text-light-blue font-bold mb-2">Proceso</span>
@@ -27,11 +27,11 @@ const WhatsAppNumber = `https://wa.me/573174048898?text=${LinkText}`
                     </div>
                 </div>
             </div>
-            <div class="flex md:hidden cta-btn w-60 h-26 max-h-26 mt-10">
+            <div class="flex md:hidden cta-btn w-60 h-20     max-h-26 mt-10">
                 <CtaBtn text="Contactar" variant="primary" link={WhatsAppNumber}/>
             </div>
         </div>
-        <div class="image-side flex flex-col justify-around items-center md:w-[50%] w-full md:h-dvh h-[50%] mb-10 md:mb-0">
+        <div class="image-side flex flex-col justify-around items-center md:w-[50%] w-full md:h-dvh h-[50%] mb-5 md:mt-20">
             <img src="./images/hero_image.jpg" alt="Hero image" class="md:w-105 w-65 md:h-100 h-60 rounded-full" />
         </div>
     </div>
