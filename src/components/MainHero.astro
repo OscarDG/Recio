@@ -6,32 +6,32 @@ const WhatsAppNumber = `https://wa.me/573174048898?text=${LinkText}`
 ---
 <main class="flex flex-col w-full h-auto bg-white pb-5">
     <div class="main-container relative flex md:flex-row flex-col w-full h-auto mt-0 md:mt-0">
-        <div class="info-side flex flex-col justify-center items-center w-full md:w-[50%] md:h-full h-[65%] p-5 md:p-10 md:order-0 order-1">
-            <div class="text flex flex-col md:w-[90%] w-full md:h-full h-[80%] justify-between items-baseline md:gap-y-0 mt-10 md:mt-10">
-                <h1 class="main-text flex justify-center md:items-end text-left text-main-orange md:leading-12 2xl:leading-18 text-4xl md:text-5xl 2xl:text-7xl font-[montserrat] font-bold animate-fade-in-down mb-6 md:mb-12">Creemos en marcas que se recuerdan y dejan huella</h1>
-                <div class="second-text md:w-[90%] text-left md:text-xl 2xl:text-4xl text-lg text-main-black font-[montserrat] animate-fade-in-down mb-15">
-                    <p>Creamos marcas memorables y experiencias digitales que conectan con tu audiencia y hacen crecer tu negocio.</p>
-                </div>
-                <div class="hero-char flex flex-row justify-around items-baseline w-full h-30 font-[montserrat] md:mb-0 mb-5 gap-x-5 md:gap-x-10">
-                    <div class="flex flex-col justify-center items-center w-[30%] h-[90%] p-2 md:p-4 text-lg md:text-md 2xl:text-2xl">
-                        <span class="text-light-blue font-bold mb-2">100%</span>
-                        <p class="text-center text-main-black">Clientes satisfechos</p>
-                    </div>
-                    <div class="flex flex-col justify-center items-center w-[30%] h-[90%] p-2 md:p-4 text-lg md:text-md 2xl:text-2xl">
-                        <span class="text-light-blue font-bold mb-2">Alineados</span>
-                        <p class="text-center text-main-black">con tus objetivos</p>
-                    </div>
-                    <div class="flex flex-col justify-center items-center w-[30%] h-[90%] p-2 md:p-4 text-lg md:text-md 2xl:text-2xl">
-                        <span class="text-light-blue font-bold mb-2">Proceso</span>
-                        <p class="text-center text-main-black">altamente colaborativo</p>
-                    </div>
+        <div class="info-side flex flex-col justify-center items-center w-full md:w-[50%] md:h-auto h-[55%] md:p-10 p-5 md:order-0 order-1">
+            <div class="text flex flex-col w-full md:h-full h-[80%] justify-center md:items-baseline items-center mt-10 md:mt-0 lg:mt-20">
+                <h1 class="main-text flex justify-center md:items-baseline w-full md:w-full md:text-left text-center text-main-orange md:leading-10 lg:leading-14 xl:leading-15 text-3xl lg:text-5xl xl:text-6xl font-[montserrat] font-bold animate-fade-in-down mb-6 md:mb-5">Creemos en marcas que se recuerdan y dejan huella</h1>
+                <div class="second-text md:w-[90%] text-left md:text-md lg:text-2xl xl:text-3xl text-main-black font-[montserrat] animate-fade-in-down mb-15">
+                    <p class="text-center md:text-left">Creamos marcas memorables y experiencias digitales que conectan con tu audiencia y hacen crecer tu negocio.</p>
                 </div>
             </div>
-            <div class="flex md:hidden cta-btn w-60 h-20     max-h-26 mt-10">
+            <div class="hero-char flex flex-row justify-baseline items-baseline w-[90%] h-30 font-[montserrat] md:mb-0 mb-5 gap-x-6 md:gap-x-10">
+                <div class="flex flex-col justify-center items-center w-[30%] h-[90%] p-2 text-md md:text-lg lg:text-2xl xl:text-3xl gap-y-2">
+                    <span class="text-light-blue font-bold">100%</span>
+                    <p class="text-center text-main-black text-sm">Clientes satisfechos</p>
+                </div>
+                <div class="flex flex-col justify-center items-center w-[30%] h-[90%] p-2 md:p-4 text-md md:text-lg lg:text-2xl xl:text-3xl gap-y-2">
+                    <span class="text-light-blue font-bold">Alineados</span>
+                    <p class="text-center text-main-black text-sm">con tus objetivos</p>
+                </div>
+                <div class="flex flex-col justify-center items-center w-[30%] h-[90%] p-2 md:p-4 text-md md:text-lg lg:text-2xl xl:text-3xl gap-y-2">
+                    <span class="text-light-blue font-bold">Proceso</span>
+                    <p class="text-center text-main-black text-sm">altamente colaborativo</p>
+                </div>
+            </div>
+            <div class="flex md:hidden cta-btn w-60 h-15 max-h-20 mt-5">
                 <CtaBtn text="Contactar" variant="primary" link={WhatsAppNumber}/>
             </div>
         </div>
-        <div class="image-side flex flex-col justify-around items-center md:w-[50%] w-full md:h-dvh h-[50%] mb-5 md:mt-20">
+        <div class="image-side flex flex-col justify-around items-center md:w-[50%] w-full md:h-dvh h-[50%] mt-25 md:mt-20">
             <img src="./images/hero_image.jpg" alt="Hero image" class="md:w-105 w-65 md:h-100 h-60 rounded-full" />
         </div>
     </div>
