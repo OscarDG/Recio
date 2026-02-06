@@ -6,27 +6,27 @@ export const clients: Clients[] = [
         country: "Colombia",
         city: "Bogotá",
         contact_name: "Tatiana Rodríguez",
-        image: "./images/isologo_elina.jpg"
+        image: "./images/isologo_elina.webp"
     },
     {
         name: "Karen Jeréz",
         country: "Colombia",
         city: "Bogotá",
         contact_name: "Karen Jeréz",
-        image: "./images/karen_redes.png" 
+        image: "./images/karen_redes.webp" 
     },
     {
         name: "Uñas con Estilo",
         country: "Colombia",
         city: "Bogotá",
         contact_name: "Paola Ocampo",
-        image: "./images/paola_ocampo.png"
+        image: "./images/paola_ocampo.webp"
     },
     {
         name: "Jesica Studio",
         country: "Colombia",
         city: "Bogotá",
         contact_name: "Jesica Calvo",
-        image: "./images/jesica_calvo.png"
+        image: "./images/jesica_calvo.webp"
     }
 ]
