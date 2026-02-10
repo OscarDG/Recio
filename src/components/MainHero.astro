@@ -4,10 +4,9 @@ import CtaBtn from "./CtaBtn.astro"
 const LinkText = encodeURI('Hola, quisiera conocer más de sus servicios')
 const WhatsAppNumber = `https://wa.me/573174048898?text=${LinkText}`
 ---
-<main class="relative flex md:flex-row flex-col w-full pb-5 bg-[url(/images/hero_image3.png)] bg-cover bg-top bg-no-repeat">
-    <div class="absolute lg:left-0 lg:top-0 bottom-0 lg:w-full w-full h-full lg:bg-transparent bg-white/30 backdrop-blur-[3px] md:backdrop-blur-[0px] md:bg-linear-to-r md:from-white md:to-transparent md:from-10%"></div>
-    <div class="info-side flex flex-col justify-center md:items-baseline items-center w-full md:w-[50%] md:h-auto h-[55%] md:p-10 p-5 md:mt-15 order-0 z-2">
-            <div class="text flex flex-col w-[80%] md:w-full md:h-auto h-[80%] justify-center lg:items-baseline items-center md:items-baseline mt-25 md:mt-0 lg:mt-10">
+<main class="relative flex md:flex-row flex-col justify-center w-full h-auto pb-5">
+    <div class="info-side flex flex-col justify-center md:items-baseline items-center w-full md:w-[50%] md:h-auto h-[55%] md:p-10 p-5 md:mt-15 mt-0 md:order-0 order-1 z-2">
+            <div class="text flex flex-col w-[80%] md:w-full md:h-auto h-[80%] justify-center lg:items-baseline items-center md:items-baseline mt-10 md:mt-0 lg:mt-10">
                 <h1 class="main-text flex justify-center md:items-baseline w-full md:w-full md:text-left text-center text-main-orange md:leading-10 lg:leading-12 xl:leading-12 text-3xl lg:text-4xl xl:text-5xl font-[montserrat] font-bold animate-fade-in-down mb-6 md:mb-5">Creemos en marcas que se recuerdan y dejan huella</h1>
                 <div class="second-text md:w-[90%] text-left md:text-md lg:text-xl xl:text-2xl text-main-black font-[montserrat] animate-fade-in-down mb-15">
                     <p class="text-center md:text-left font-semibold">Creamos marcas memorables y experiencias digitales que conectan con tu audiencia y hacen crecer tu negocio.</p>
@@ -16,22 +15,24 @@ const WhatsAppNumber = `https://wa.me/573174048898?text=${LinkText}`
             <div class="hero-char flex flex-row justify-baseline items-baseline w-[90%] h-30 font-[montserrat] md:mb-0 mb-5 gap-x-6 md:gap-x-10">
                 <div class="flex flex-col justify-center items-center w-[30%] h-[90%] p-2 text-md md:text-lg lg:text-xl xl:text-2xl gap-y-1">
                     <span class="text-light-blue font-bold">100%</span>
-                    <p class="text-center lg:text-main-black text-main-white text-sm">Clientes satisfechos</p>
+                    <p class="text-center text-main-black  text-sm">Clientes satisfechos</p>
                 </div>
                 <div class="flex flex-col justify-center items-center w-[30%] h-[90%] p-2 md:p-4 text-md md:text-lg lg:text-xl xl:text-2xl gap-y-1">
                     <span class="text-light-blue font-bold">Alineados</span>
-                    <p class="text-center lg:text-main-black text-main-white text-sm">con tus objetivos</p>
+                    <p class="text-center text-main-black text-sm">con tus objetivos</p>
                 </div>
                 <div class="flex flex-col justify-center items-center w-[30%] h-[90%] p-2 md:p-4 text-md md:text-lg lg:text-xl xl:text-2xl gap-y-1">
                     <span class="text-light-blue font-bold">Proceso</span>
-                    <p class="text-center lg:text-main-black text-main-white text-sm">altamente colaborativo</p>
+                    <p class="text-center text-main-black text-sm">altamente colaborativo</p>
                 </div>
             </div>
             <div class="flex md:hidden cta-btn w-60 h-15 max-h-20 mt-5">
                 <CtaBtn text="Contactar" variant="primary" link={WhatsAppNumber}/>
             </div>
-        </div>
-        <div class="relative image-side flex flex-col justify-around items-center md:w-[50%] w-full md:h-auto h-[50%] mt-25 md:mt-0">
-
-        </div>
+    </div>
+    <div class="relative image-side flex flex-col justify-around items-center md:w-[50%] w-full md:h-auto h-[50%] mt-30 md:mt-0 md:order-1 order-0">
+            <div class="hero-image mdabsolute flex md:top-20 top-0 md:right-35 right-0 w-[50%] h-auto md:w-[70%] md:h-[70%]">
+                <img src="/images/hero_image.webp" alt="Hero Image" class="w-fit h-fit"/>
+            </div>
+    </div>
 </main>
