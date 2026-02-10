@@ -6,6 +6,6 @@ export type Service = {
   id: number;
   name: string;
   description: string;
-  image_url: string;
+  image_svg: string;
   works: Works[];
 };
