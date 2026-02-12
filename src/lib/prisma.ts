@@ -7,7 +7,7 @@ const { PrismaClient } = require("@prisma/client");
 const connectionString = process.env.PRISMA_DATABASE_URL;
 
 if (!connectionString) {
-  throw new Error("DATABASE_URL is not set");
+  throw new Error("PRISMA_DATABASE_URL is not set");
 }
 
 const adapter = new PrismaPg({ connectionString });
