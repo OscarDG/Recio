@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@astrojs/react": "^4.4.2",
+    "@astrojs/vercel": "^9.0.4",
     "@fontsource-variable/montserrat": "^5.2.8",
     "@prisma/adapter-pg": "^7.3.0",
     "@prisma/client": "^7.3.0",
