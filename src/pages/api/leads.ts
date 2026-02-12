@@ -27,3 +27,5 @@ export const POST: APIRoute = async ({ request }) => {
     );
   }
 };
+
+console.log("PRISMA_DATABASE_URL:", process.env.PRISMA_DATABASE_URL);
