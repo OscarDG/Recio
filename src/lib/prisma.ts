@@ -1,12 +1,15 @@
-import { PrismaClient } from "../../prisma/generated/client.ts";
-import { PrismaPg } from "@prisma/adapter-pg";
+import { createRequire } from "module";
 
-const adapter = new PrismaPg({
-  connectionString: import.meta.env.DATABASE_URL,
-});
+const require = createRequire(import.meta.url);
+const { PrismaClient } = require("@prisma/client");
 
-const prisma = new PrismaClient({
-  adapter,
-});
+const globalForPrisma = globalThis as unknown as {
+  prisma: InstanceType<typeof PrismaClient> | undefined;
+};
 
-export default prisma;
+export const prisma =
+  globalForPrisma.prisma ?? new PrismaClient({});
+
+if (process.env.NODE_ENV !== "production") {
+  globalForPrisma.prisma = prisma;
+}

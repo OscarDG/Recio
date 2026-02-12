@@ -1,0 +1,62 @@
+---
+---
+<div class="w-full h-auto bg-[#ffffff] my-5">
+    <form id="lead-form">
+    <div>
+        <label>
+        Nombre
+        <input type="text" name="name" required />
+        </label>
+    </div>
+
+    <div>
+        <label>
+        Email
+        <input type="email" name="email" required />
+        </label>
+    </div>
+
+    <button type="submit">Enviar</button>
+
+    <p id="form-message"></p>
+    </form>
+</div>
+<script>
+  const form = document.getElementById("lead-form") as HTMLFormElement;
+  const message = document.getElementById("form-message");
+
+  if (form && message) {
+    form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+    const data = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+    };
+
+    message.textContent = "Enviando...";
+
+    try {
+      const res = await fetch("/api/leads", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await res.json();
+
+      if (!res.ok) {
+        throw new Error(result.error || "Error al enviar");
+      }
+
+      message.textContent = "¡Gracias! Te hemos registrado.";
+      form.reset();
+    } catch (err) {
+      message.textContent = "Hubo un error. Intenta de nuevo.";
+    }
+  });
+}
+</script>

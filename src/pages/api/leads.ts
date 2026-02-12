@@ -1,30 +1,29 @@
 import type { APIRoute } from "astro";
-import prisma from "@/lib/prisma";
+import { prisma } from "../../lib/prisma";
 
-export const POST: APIRoute = async ({request}) => {
-    const body = await request.json();
-    const { name, email } = body;
+export const prerender = false;
 
-    if(!name || !email){
-        return new Response(
-            JSON.stringify({ error: "Name and email are required" }),
-            { status: 400}
-        );
-    }
+export const POST: APIRoute = async ({ request }) => {
+  const { name, email } = await request.json();
 
-    try{
-        const lead = await prisma.lead.create({
-            data:{
-                name,
-                email,
-            },
-        });
+  if (!name || !email) {
+    return new Response(
+      JSON.stringify({ error: "Name and email are required" }),
+      { status: 400 }
+    );
+  }
 
-        return new Response(JSON.stringify(lead), { status: 201 });
-    } catch (error) {
-        return new Response(
-            JSON.stringify({ error: "Email already exists or DB error" }),
-            { status: 500 }
-        );
-    }
+  try {
+    const lead = await prisma.lead.create({
+      data: { name, email },
+    });
+
+    return new Response(JSON.stringify(lead), { status: 201 });
+  } catch (error) {
+    console.error(error);
+    return new Response(
+      JSON.stringify({ error: "DB error" }),
+      { status: 500 }
+    );
+  }
 };
