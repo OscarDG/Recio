@@ -1,5 +1,5 @@
 import type { APIRoute } from "astro";
-import { prisma } from "@/lib/prisma";
+import prisma from "@/lib/prisma";
 
 export const POST: APIRoute = async ({request}) => {
     const body = await request.json();
