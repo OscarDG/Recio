@@ -53,7 +53,7 @@
       message.textContent = "¡Gracias! Hemos enviado tu solicitud.";
       form.reset();
     } catch (err) {
-      message.textContent = "Opps!! Hubo un error. Intenta de nuevo.";
+      message.textContent = `Opps!! Hubo un error. Intenta de nuevo. - ${err.message}`;
     }
   });
 }

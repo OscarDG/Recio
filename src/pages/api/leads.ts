@@ -1,5 +1,6 @@
 import type { APIRoute } from "astro";
 import { prisma } from "../../lib/prisma";
+import { Prisma } from "@prisma/client"
 
 export const prerender = false;
 
@@ -20,6 +21,15 @@ export const POST: APIRoute = async ({ request }) => {
 
     return new Response(JSON.stringify(lead), { status: 201 });
   } catch (error) {
+    if(
+      error instanceof Prisma.PrismaClientKnownRequestError && error.code === "P2002"
+    ){
+      return new Response(
+        JSON.stringify({ error: "Este email ya está registrado" }),
+        { status: 409 } // 409 = Conflict
+      );
+    }
+
     console.error(error);
     return new Response(
       JSON.stringify({ error: "DB error" }),
