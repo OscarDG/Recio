@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/analytics/react';
 
 interface Props {
     title: string,
@@ -70,6 +71,7 @@ const orgSchema = {
         <!-- End Google Tag Manager (noscript) -->
         <slot/>
         <Analytics />
+        <SpeedInsights />   
     </body>
 </html>
 <style>
